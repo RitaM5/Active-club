@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import Service from '../Service/Service';
+import { GoLocation } from 'react-icons/go';
 
 import './Home.css'
 const Home = () => {
@@ -27,8 +28,14 @@ const Home = () => {
                         }
                     </div>
                 </div>
-                <div className="col-lg-4">
-
+                <div className="col-lg-4 bg-white rounded">
+                    <div className='d-flex p-3'>
+                        <img src="image/mens.png" alt="" style={{width:50, height:50, borderRadius:100}}></img>
+                        <div className='ms-2'>
+                            <h5>Zahid Hossain</h5>
+                            <p><GoLocation/></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

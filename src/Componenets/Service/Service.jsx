@@ -12,7 +12,7 @@ const Service = (props) => {
                     <p>{details}</p>
                     <p className='fw-bold'>For Age : {age}</p>
                     <p className='fw-bold'>Time required : {time}</p>
-                   <p className='pb-2'><Button variant="info">Add to List</Button>{' '}</p>
+                    <p className='pb-2'><Button variant="info">Add to List</Button>{' '}</p>
                 </div>
             </div>
         </div>
