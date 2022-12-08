@@ -30,10 +30,24 @@ const Home = () => {
                 </div>
                 <div className="col-lg-4 bg-white rounded">
                     <div className='d-flex p-3'>
-                        <img src="image/mens.png" alt="" style={{width:50, height:50, borderRadius:100}}></img>
+                        <img src="image/mens.png" alt="" style={{ width: 50, height: 50, borderRadius: 100 }}></img>
                         <div className='ms-2'>
                             <h5>Zahid Hossain</h5>
-                            <p><GoLocation/></p>
+                            <p className=''><GoLocation /> aaaaaaaaaaaa</p>
+                        </div>
+                    </div>
+                    <div className='d-flex justify-content-around box-1 pt-3 rounded'>
+                        <div className=''>
+                            <h5>75<span style={{ fontSize: 10 }}>kg</span></h5>
+                            <p>Weight</p>
+                        </div>
+                        <div>
+                            <h5>6.5</h5>
+                            <p>Height</p>
+                        </div>
+                        <div>
+                            <h5>25<span style={{ fontSize: 10 }}>yrs</span></h5>
+                            <p>Age</p>
                         </div>
                     </div>
                 </div>
