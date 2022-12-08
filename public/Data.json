@@ -1,0 +1,50 @@
+[
+    {
+        "id": "101",
+        "age": "20-25",
+        "time": "15s",
+        "name": "Marylou",
+        "picture": "image/pic-1.png",
+        "details": "Exercise is a body activity that enhances or maintains physical fitness and overall health and wellness. Running in water (aquarunning). Weight training."
+    },
+    {
+        "id": "101",
+        "age": "20-25",
+        "time": "35s",
+        "name": "Marylou",
+        "picture": "image/pic-2.png",
+        "details": "Exercise is a body activity that enhances or maintains physical fitness and overall health and wellness. Running in water (aquarunning). Weight training."
+    },
+    {
+        "id": "101",
+        "age": "20-25",
+        "time": "25s",
+        "name": "Marylou",
+        "picture": "image/pic-3.png",
+        "details": "Exercise is a body activity that enhances or maintains physical fitness and overall health and wellness. Running in water (aquarunning). Weight training."
+    },
+    {
+        "id": "101",
+        "age": "20-25",
+        "time": "20s",
+        "name": "Marylou",
+        "picture": "image/pic-4.png",
+        "details": "Exercise is a body activity that enhances or maintains physical fitness and overall health and wellness. Running in water (aquarunning). Weight training."
+    },
+    {
+        "id": "101",
+        "age": "20-25",
+        "time": "30s",
+        "name": "Marylou",
+        "picture": "image/pic-5.png",
+        "details": "Exercise is a body activity that enhances or maintains physical fitness and overall health and wellness. Running in water (aquarunning). Weight training."
+    },
+    {
+        "id": "101",
+        "age": "20-25",
+        "time": "25s",
+        "name": "Marylou",
+        "picture": "image/pic-6.png",
+        "details": "Exercise is a body activity that enhances or maintains physical fitness and overall health and wellness. Running in water (aquarunning). Weight training."
+    }
+]
