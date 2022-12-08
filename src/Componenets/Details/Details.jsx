@@ -47,15 +47,20 @@ const Details = () => {
                 </div>
             </div>
             <h5 className='pt-5 heading'>Exercise Details</h5>
-            <div className='d-flex justify-content-around box-part pt-3 rounded'>
-                <div className=''>
-                    <h5>75<span style={{ fontSize: 10 }}>kg</span></h5>
-                    <p>Weight</p>
-                </div>
-                <div>
-                    <h5>6.5</h5>
-                    <p>Height</p>
-                </div>
+            <div className='box-part d-flex justify-content-between p-3 rounded mt-3'>
+                <h6>Exercise time</h6>
+                <p className='fw-bold'>200 seconds</p>
+            </div>
+            <br />
+            <div className='box-part d-flex justify-content-between p-3 rounded'>
+                <h6>Break time</h6>
+                <p className='fw-bold'>15 seconds</p>
+            </div>
+            <div className='bg-danger p-2 rounded text-white mt-5'>
+                <h6>Activity Completed</h6>
+            </div>
+            <div className='box-part p-4 rounded mt-3' id="show-total">
+                <h6></h6>
             </div>
         </>
     )
