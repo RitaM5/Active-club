@@ -5,7 +5,7 @@ const Service = (props) => {
     const {addToList, items} = props;
     const { name, picture, details, age, time,} = props.items;
     return (
-        <div className='col-lg-4 col-md-4 col-12'>
+        <div className='col-lg-4 col-md-6 col-12'>
             <div className="bg-white rounded Larger shadow">
                 <img className="card-img p-2" src={picture} alt="" style={{ height: 150, borderRadius: 20 }} />
                 <div className='card-part ps-2'>

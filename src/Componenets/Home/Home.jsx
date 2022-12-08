@@ -1,35 +1,26 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import Service from '../Service/Service';
-
-
 import './Home.css'
 import Details from '../Details/Details';
 const Home = () => {
     const [services, setServices] = useState([]);
-    const [totalTimes, setTotalTimes] = useState(0)
+    const [totalTimes, setTotalTimes] = useState(0);
     useEffect(() => {
         fetch('Data.json')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
-    
+
     const addToList = (time) => {
-       console.log(time);
-       const exerciseTime = document.getElementById('exercise');
-       exerciseTime.innerText= setTotalTimes(totalTimes + time);
-     
-     
-     }
-         /*  const exerciseTime = document.getElementById('exercise');
-        console.log(times); 
-        exerciseTime.innerText=times;
-        exerciseTime.innerText=parseFloat(exerciseTime.innerText) + parseFloat(times);
-    */
+        //console.log(time);
+        setTotalTimes(parseInt(totalTimes) + parseInt(time));
+    }
+  
     return (
         <>
             <div className='row'>
-                <div className="col-lg-8">
+                <div className="col-lg-8 col-md-8 col-12">
                     <div className='heading'>
                         <h3><img className='me-2' src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-exercise-working-stress-flaticons-flat-flat-icons-2.png" />UTRA-ACTIVE-CLUB</h3>
                         <p className='fs-5'>Select today’s exercise</p>
@@ -43,8 +34,8 @@ const Home = () => {
                         }
                     </div>
                 </div>
-                <div className="col-lg-4 bg-white rounded">
-                    <Details />
+                <div className="col-lg-4 col-md-4 col-12 bg-white rounded">
+                    <Details totalTimes={totalTimes} />
                 </div>
             </div>
         </>

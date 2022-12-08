@@ -1,7 +1,23 @@
 import React from 'react'
+import { useState } from 'react';
 import { GoLocation } from 'react-icons/go';
+import Boxs from '../boxs/boxs';
 import './Details.css'
-const Details = () => {
+const Details = (props) => {
+    const [boxData, setBoxData] = useState(0);
+    const boxs = [
+        10,
+        20,
+        30,
+        40,
+        50,
+        60
+    ]
+    const addToBreak = (box) => {
+        console.log(box);
+        // boxData=box;
+        setBoxData(box);
+    }
     return (
         <>
             <div className='d-flex p-3'>
@@ -27,39 +43,24 @@ const Details = () => {
             </div>
             <h5 className='py-3 heading'>Add A Break</h5>
             <div className='d-flex justify-content-around box-part py-3 rounded box-2'>
-                <div className='box-1' style={{ width: 35, height: 35, borderRadius: 100 }}>
-                    <p className='pt-2 fw-bold'>10s</p>
-                </div>
-                <div className='box-1' style={{ width: 35, height: 35, borderRadius: 100 }}>
-                    <p className='pt-2 fw-bold'>20s</p>
-                </div>
-                <div className='box-1' style={{ width: 35, height: 35, borderRadius: 100 }}>
-                    <p className='pt-2 fw-bold'>30s</p>
-                </div>
-                <div className='box-1' style={{ width: 35, height: 35, borderRadius: 100 }}>
-                    <p className='pt-2 fw-bold'>40s</p>
-                </div>
-                <div className='box-1' style={{ width: 35, height: 35, borderRadius: 100 }}>
-                    <p className='pt-2 fw-bold'>50s</p>
-                </div>
-                <div className='box-1' style={{ width: 35, height: 35, borderRadius: 100 }}>
-                    <p className='pt-2 fw-bold'>60s</p>
-                </div>
+                {
+                    boxs.map(box => <Boxs box={box} addToBreak={addToBreak} />)
+                }
             </div>
             <h5 className='pt-5 heading'>Exercise Details</h5>
             <div className='box-part d-flex justify-content-between p-3 rounded mt-3'>
                 <h6>Exercise time</h6>
-                <p className='fw-bold' id="exercise"></p>
+                <p className='fw-bold' id="exercise">{props.totalTimes}s</p>
             </div>
             <br />
             <div className='box-part d-flex justify-content-between p-3 rounded'>
                 <h6>Break time</h6>
-                <p className='fw-bold' id="break"></p>
+                <p className='fw-bold' id="break">{boxData}</p>
             </div>
             <div className='bg-danger p-2 rounded text-white mt-5'>
                 <h6>Activity Completed</h6>
             </div>
-            <div className='box-part p-4 rounded mt-3' id="show-total">
+            <div className='box-part p-4 rounded my-3' id="show-total">
                 <h6></h6>
             </div>
         </>
