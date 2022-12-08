@@ -49,12 +49,12 @@ const Details = () => {
             <h5 className='pt-5 heading'>Exercise Details</h5>
             <div className='box-part d-flex justify-content-between p-3 rounded mt-3'>
                 <h6>Exercise time</h6>
-                <p className='fw-bold'>200 seconds</p>
+                <p className='fw-bold' id="exercise"></p>
             </div>
             <br />
             <div className='box-part d-flex justify-content-between p-3 rounded'>
                 <h6>Break time</h6>
-                <p className='fw-bold'>15 seconds</p>
+                <p className='fw-bold' id="break"></p>
             </div>
             <div className='bg-danger p-2 rounded text-white mt-5'>
                 <h6>Activity Completed</h6>

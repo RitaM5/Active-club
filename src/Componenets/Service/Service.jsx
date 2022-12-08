@@ -2,7 +2,8 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import './Service.css'
 const Service = (props) => {
-    const { name, picture, details, age, time } = props.items;
+    const {addToList, items} = props;
+    const { name, picture, details, age, time,} = props.items;
     return (
         <div className='col-lg-4 col-md-4 col-12'>
             <div className="bg-white rounded Larger shadow">
@@ -12,7 +13,7 @@ const Service = (props) => {
                     <p>{details}</p>
                     <p className='fw-bold'>For Age : {age}</p>
                     <p className='fw-bold'>Time required : {time}</p>
-                    <p className='pb-2'><Button variant="info">Add to List</Button>{' '}</p>
+                    <p className='pb-2' onClick={()=>addToList(time)}><Button variant="info">Add to List</Button>{' '}</p>
                 </div>
             </div>
         </div>

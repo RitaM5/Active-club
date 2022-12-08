@@ -7,11 +7,25 @@ import './Home.css'
 import Details from '../Details/Details';
 const Home = () => {
     const [services, setServices] = useState([]);
+    const [totalTimes, setTotalTimes] = useState(0)
     useEffect(() => {
         fetch('Data.json')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
+    
+    const addToList = (time) => {
+       console.log(time);
+       const exerciseTime = document.getElementById('exercise');
+       exerciseTime.innerText= setTotalTimes(totalTimes + time);
+     
+     
+     }
+         /*  const exerciseTime = document.getElementById('exercise');
+        console.log(times); 
+        exerciseTime.innerText=times;
+        exerciseTime.innerText=parseFloat(exerciseTime.innerText) + parseFloat(times);
+    */
     return (
         <>
             <div className='row'>
@@ -25,7 +39,7 @@ const Home = () => {
                             services.map(items =>
                                 <Service
                                     key={items.id}
-                                    items={items} />)
+                                    items={items} addToList={addToList} />)
                         }
                     </div>
                 </div>
