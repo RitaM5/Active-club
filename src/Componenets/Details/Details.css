@@ -1,0 +1,9 @@
+.box-part{
+    background-color: lightblue;
+}
+.box-1{
+    background-color: violet;
+}
+.box-2{
+    overflow:hidden;
+}

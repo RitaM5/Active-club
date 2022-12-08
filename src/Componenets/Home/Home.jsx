@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import Service from '../Service/Service';
-import { GoLocation } from 'react-icons/go';
+
 
 import './Home.css'
+import Details from '../Details/Details';
 const Home = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
@@ -29,27 +30,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="col-lg-4 bg-white rounded">
-                    <div className='d-flex p-3'>
-                        <img src="image/mens.png" alt="" style={{ width: 50, height: 50, borderRadius: 100 }}></img>
-                        <div className='ms-2'>
-                            <h5>Zahid Hossain</h5>
-                            <p className=''><GoLocation /> aaaaaaaaaaaa</p>
-                        </div>
-                    </div>
-                    <div className='d-flex justify-content-around box-1 pt-3 rounded'>
-                        <div className=''>
-                            <h5>75<span style={{ fontSize: 10 }}>kg</span></h5>
-                            <p>Weight</p>
-                        </div>
-                        <div>
-                            <h5>6.5</h5>
-                            <p>Height</p>
-                        </div>
-                        <div>
-                            <h5>25<span style={{ fontSize: 10 }}>yrs</span></h5>
-                            <p>Age</p>
-                        </div>
-                    </div>
+                    <Details />
                 </div>
             </div>
         </>
