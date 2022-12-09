@@ -4,7 +4,9 @@ import { GoLocation } from 'react-icons/go';
 import Boxs from '../boxs/boxs';
 import './Details.css'
 const Details = (props) => {
+    const{totalTimes} = props;
     const [boxData, setBoxData] = useState(0);
+    const [addActivityData, setAddActivityData] = useState(0);
     const boxs = [
         10,
         20,
@@ -14,9 +16,13 @@ const Details = (props) => {
         60
     ]
     const addToBreak = (box) => {
-        console.log(box);
+       // console.log(box);
         // boxData=box;
         setBoxData(box);
+    }
+    const addActivity = (totalTimes,boxData)=>{
+        console.log(totalTimes, boxData);
+             setAddActivityData(parseInt(totalTimes) - parseInt(boxData));
     }
     return (
         <>
@@ -50,18 +56,20 @@ const Details = (props) => {
             <h5 className='pt-5 heading'>Exercise Details</h5>
             <div className='box-part d-flex justify-content-between p-3 rounded mt-3'>
                 <h6>Exercise time</h6>
-                <p className='fw-bold' id="exercise">{props.totalTimes}s</p>
+                <p className='fw-bold' id="exercise">
+                   {totalTimes}s
+                </p>
             </div>
             <br />
             <div className='box-part d-flex justify-content-between p-3 rounded'>
                 <h6>Break time</h6>
-                <p className='fw-bold' id="break">{boxData}</p>
+                <p className='fw-bold' id="break">{boxData}s</p>
             </div>
-            <div className='bg-danger p-2 rounded text-white mt-5'>
+            <div className='bg-danger p-2 rounded text-white mt-5' onClick={()=>addActivity(totalTimes,boxData)}>
                 <h6>Activity Completed</h6>
             </div>
             <div className='box-part p-4 rounded my-3' id="show-total">
-                <h6></h6>
+                <h6>{addActivityData}s</h6>
             </div>
         </>
     )
