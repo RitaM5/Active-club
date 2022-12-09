@@ -4,7 +4,7 @@ import { GoLocation } from 'react-icons/go';
 import Boxs from '../boxs/boxs';
 import './Details.css'
 const Details = (props) => {
-    const{totalTimes} = props;
+    const { totalTimes } = props;
     const [boxData, setBoxData] = useState(0);
     const [addActivityData, setAddActivityData] = useState(0);
     const boxs = [
@@ -15,22 +15,39 @@ const Details = (props) => {
         50,
         60
     ]
+    const findMyState = () => {
+        const status = document.querySelector('.status');
+        const success = (position) => {
+            console.log(position);
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+            fetch(geoApiUrl)
+                .then(res => res.json())
+                .then(data =>
+                    status.textContent =data.locality + ',' + ' '+ data.countryName
+                )
+        }
+        const error = () => {
+            status.textContent = 'Unable to retrieve your location';
+        }
+        navigator.geolocation.getCurrentPosition(success, error);
+    }
+    findMyState()
     const addToBreak = (box) => {
-       // console.log(box);
-        // boxData=box;
         setBoxData(box);
     }
-    const addActivity = (totalTimes,boxData)=>{
-        console.log(totalTimes, boxData);
-             setAddActivityData(parseInt(totalTimes) - parseInt(boxData));
+    const addActivity = (totalTimes, boxData) => {
+        setAddActivityData(parseInt(totalTimes) - parseInt(boxData));
     }
+
     return (
         <>
             <div className='d-flex p-3'>
                 <img src="image/mens.png" alt="" style={{ width: 50, height: 50, borderRadius: 100 }}></img>
-                <div className='ms-2'>
+                <div className=''>
                     <h5>Zahid Hossain</h5>
-                    <p className=''><GoLocation /> aaaaaaaaaaaa</p>
+                    <p className='ms-3'><GoLocation/><span className='status ms-2' onClick={findMyState}></span></p>
                 </div>
             </div>
             <div className='d-flex justify-content-around box-part pt-3 rounded'>
@@ -57,7 +74,7 @@ const Details = (props) => {
             <div className='box-part d-flex justify-content-between p-3 rounded mt-3'>
                 <h6>Exercise time</h6>
                 <p className='fw-bold' id="exercise">
-                   {totalTimes}s
+                    {totalTimes}s
                 </p>
             </div>
             <br />
@@ -65,7 +82,7 @@ const Details = (props) => {
                 <h6>Break time</h6>
                 <p className='fw-bold' id="break">{boxData}s</p>
             </div>
-            <div className='bg-danger p-2 rounded text-white mt-5' onClick={()=>addActivity(totalTimes,boxData)}>
+            <div className='bg-danger p-2 rounded text-white mt-5' onClick={() => addActivity(totalTimes, boxData)}>
                 <h6>Activity Completed</h6>
             </div>
             <div className='box-part p-4 rounded my-3' id="show-total">
@@ -74,5 +91,6 @@ const Details = (props) => {
         </>
     )
 }
+
 
 export default Details

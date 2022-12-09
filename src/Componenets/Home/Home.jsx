@@ -16,13 +16,13 @@ const Home = () => {
         //console.log(time);
         setTotalTimes(parseInt(totalTimes) + parseInt(time));
     }
-  
+
     return (
         <>
             <div className='row'>
                 <div className="col-lg-8 col-md-8 col-12">
                     <div className='heading'>
-                        <h3><img className='me-2' src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-exercise-working-stress-flaticons-flat-flat-icons-2.png" />UTRA-ACTIVE-CLUB</h3>
+                        <h3><img className='me-2' src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-exercise-working-stress-flaticons-flat-flat-icons-2.png" /><span className='header-title fw-bold'>UTRA-ACTIVE-CLUB</span></h3>
                         <p className='fs-5'>Select today’s exercise</p>
                     </div>
                     <div className="row py-2">
