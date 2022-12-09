@@ -34,13 +34,15 @@ const Details = (props) => {
         navigator.geolocation.getCurrentPosition(success, error);
     }
     findMyState()
+
     const addToBreak = (box) => {
         setBoxData(box);
     }
     const addActivity = (totalTimes, boxData) => {
+       if(totalTimes){
         setAddActivityData(parseInt(totalTimes) - parseInt(boxData));
+       }
     }
-
     return (
         <>
             <div className='d-flex p-3'>
