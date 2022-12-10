@@ -12,9 +12,20 @@ const Home = () => {
             .then(data => setServices(data));
     }, [])
 
-    const addToList = (time) => {
+    const addToList = (d) => {
         //console.log(time);
-        setTotalTimes(parseInt(totalTimes) + parseInt(time));
+        //d = Number(d);
+        var h = Math.floor(d / 3600);
+        var m = Math.floor(d % 3600 / 60);
+        var s = Math.floor(d % 3600 % 60);
+    
+        var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours, ") : "";
+        var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "";
+        var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
+        let totalTimes = hDisplay + mDisplay + sDisplay;
+        return totalTimes; 
+        //setTotalTimes(hDisplay + mDisplay + sDisplay);
+        //setTotalTimes(parseInt(totalTimes) + parseInt(time));
     }
 
     return (
@@ -22,7 +33,7 @@ const Home = () => {
             <div className='row'>
                 <div className="col-lg-8 col-md-8 col-12">
                     <div className='heading'>
-                        <h3><img className='me-2' src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-exercise-working-stress-flaticons-flat-flat-icons-2.png" /><span className='header-title fw-bold'>UTRA-ACTIVE-CLUB</span></h3>
+                        <h3><img className='me-2' src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-exercise-working-stress-flaticons-flat-flat-icons-2.png" /><span className='header-title fw-bold'>ULTRA-ACTIVE-CLUB</span></h3>
                         <p className='fs-5'>Select today’s exercise</p>
                     </div>
                     <div className="row py-2">
