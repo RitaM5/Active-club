@@ -13,7 +13,13 @@ const Details = (props) => {
         30,
         40,
         50,
-        60
+        60,
+        70,
+        80,
+        90,
+        100,
+        101,
+        102
     ]
     const findMyState = () => {
         const status = document.querySelector('.status');
@@ -67,7 +73,7 @@ const Details = (props) => {
                 </div>
             </div>
             <h5 className='py-3 heading'>Add A Break</h5>
-            <div className='d-flex justify-content-around box-part py-3 rounded box-2'>
+            <div className='d-flex justify-content-between gap-3 box-part py-3 rounded box-2'>
                 {
                     boxs.map(box => <Boxs box={box} addToBreak={addToBreak} />)
                 }
