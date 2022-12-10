@@ -8,7 +8,7 @@ const Boxs = ({box, addToBreak}) => {
         fontSize: 10,
     }
   return (
-    <Button className='box-1 border-0 fw-bold' style={styles} onClick={()=>addToBreak(box)}>{box}</Button> 
+    <Button className='box-1 fw-bold' style={styles} onClick={()=>addToBreak(box)}>{box}</Button> 
   )
 }
 
